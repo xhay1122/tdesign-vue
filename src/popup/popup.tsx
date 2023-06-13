@@ -410,7 +410,16 @@ export default mixins(classPrefixMixins).extend({
                 },
               },
             },
-            [content, this.showArrow && h('div', { class: `${this.componentName}__arrow` })],
+            [
+              content,
+              this.showArrow
+                    && h('div', {
+                      attrs: {
+                        'data-popper-arrow': true,
+                      },
+                      class: `${this.componentName}__arrow`,
+                    }),
+            ],
           ),
         ],
       )
